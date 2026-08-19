@@ -1,7 +1,7 @@
 ---
 title: 01 — 跑测试 + 找 bug
 scenario_id: 01-debug-bug
-status: working
+status: draft
 opencode_version: 1.18.18
 related_example: ../../examples/01-debug-bug/
 ---
