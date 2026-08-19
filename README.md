@@ -4,9 +4,11 @@
 
 ## 本地预览
 
+需要 [uv](https://github.com/astral-sh/uv)。
+
 ```bash
-pip install -r requirements.txt
-mkdocs serve
+uv sync
+uv run mkdocs serve
 ```
 
 打开 http://127.0.0.1:8000
@@ -26,7 +28,8 @@ mkdocs serve
 │   ├── 03-refactor/
 │   └── 04-pr-review/
 ├── mkdocs.yml
-├── requirements.txt
+├── pyproject.toml
+├── uv.lock
 └── README.md
 ```
 
