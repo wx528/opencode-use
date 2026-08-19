@@ -16,7 +16,6 @@ title: Experiment — permission patterns 对比
 
 - ✅ 零摩擦,任何 subagent 都能做任何事
 - ❌ 几乎从不"是你想要的"
-- **结论**:个人 demo 之外不要用。
 
 ## 写法 B:per-tool 三动作
 

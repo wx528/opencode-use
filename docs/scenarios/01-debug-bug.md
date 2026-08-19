@@ -89,4 +89,4 @@ opencode
 - `examples/01-debug-bug/.opencode/opencode.json` 故意保留了**已废弃的 `tools` 字段**作为反面教材,不要照抄:它只能表达"能/不能",无法表达 `ask`,也不支持 pattern 匹配;schema 里它的说明就是 `@deprecated Use 'permission' field instead`。另外注意 `permission` 没有 `write` 这个 key,写文件归 `edit` 管。
 - `temperature: 0.1` 比默认低,让测试输出更稳定(避免随机性掩盖 bug)。
 - `task: deny` 重要 —— tester 自己开 subagent 会导致上下文膨胀。
-- opencode 升级后(主目录 `.opencode/config.json` 字段变化),把本场景 `status` 降回 `working` 跑一遍,再升回 `verified`。
+- opencode 升级后,**若本场景已是 `verified`**(说明此前已手动跑过),把 `status` 降为 `working`,跑一遍 `examples/01-debug-bug/`,再升回 `verified`。

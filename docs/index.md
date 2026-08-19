@@ -34,7 +34,7 @@ title: 首页
 
 1. 在 `docs/scenarios/` 起新文件,从模板起手,标 `status: draft`
 2. 在 `examples/NN-name/` 起可运行子项目
-3. `cd && opencode` 手动验证
+3. `cd examples/NN-name && opencode` 手动验证
 4. 回场景文档补全"工作流"、"配置要点"
 5. `status: working` → 提交
 6. 真实任务用过后 → `status: verified`
