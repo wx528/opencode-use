@@ -39,6 +39,11 @@ exclude_docs: |
 
 nav:
   - 首页: index.md
+  - Scenarios:
+      - 01 — 跑测试 + 找 bug: scenarios/01-debug-bug.md
+      - 02 — 加新功能: scenarios/02-add-feature.md
+      - 03 — 重构: scenarios/03-refactor.md
+      - 04 — PR review: scenarios/04-pr-review.md
   - Concepts:
       - agents: concepts/agents.md
       - permissions: concepts/permissions.md
