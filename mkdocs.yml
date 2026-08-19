@@ -1,0 +1,52 @@
+site_name: opencode-use
+site_description: 个人备忘,记录 opencode 用法的工作流与踩坑
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - palette.toggle
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 切换到暗色
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮色
+
+markdown_extensions:
+  - admonition
+  - pymdownx.tabbed
+  - codehilite
+  - toc:
+      permalink: true
+  - attr_list
+
+plugins:
+  - search
+
+exclude_docs: |
+  examples/**
+  superpowers/**
+
+nav:
+  - 首页: index.md
+  - Scenarios:
+      - 01 — 跑测试 + 找 bug: scenarios/01-debug-bug.md
+      - 02 — 加新功能: scenarios/02-add-feature.md
+      - 03 — 重构: scenarios/03-refactor.md
+      - 04 — PR review: scenarios/04-pr-review.md
+  - Concepts:
+      - agents: concepts/agents.md
+      - permissions: concepts/permissions.md
+      - subagent vs primary: concepts/subagent-vs-primary.md
+  - Experiments:
+      - permission patterns: experiments/permission-patterns.md

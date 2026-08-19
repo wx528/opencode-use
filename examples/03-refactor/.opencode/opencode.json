@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "plan",
+  "agent": {
+    "plan": {
+      "permission": {
+        "edit": "deny",
+        "bash": "ask"
+      }
+    },
+    "build": {
+      "disable": true
+    },
+    "refactor-planner": {
+      "mode": "subagent",
+      "temperature": 0.3,
+      "permission": {
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "edit": "deny",
+        "bash": "deny",
+        "task": "deny"
+      }
+    }
+  }
+}
