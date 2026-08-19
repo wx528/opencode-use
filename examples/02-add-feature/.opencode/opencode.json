@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "build",
+  "agent": {
+    "feature-builder": {
+      "mode": "subagent",
+      "temperature": 0.2,
+      "permission": {
+        "read": "allow",
+        "edit": "allow",
+        "bash": "allow",
+        "task": "deny"
+      }
+    }
+  },
+  "command": {
+    "feat": {
+      "description": "Implement a feature via feature-builder subagent",
+      "template": "Use the feature-builder subagent to implement: $ARGUMENTS"
+    }
+  }
+}
