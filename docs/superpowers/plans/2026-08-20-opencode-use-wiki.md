@@ -20,6 +20,7 @@
 - **场景文件命名**:`docs/scenarios/NN-name.md` ↔ `examples/NN-name/`,编号严格一致,两位数前缀
 - **场景 frontmatter**:`title`、`scenario_id`、`status` (`draft|working|verified`)、`opencode_version`、`related_example`
 - **示例 README 必须有**:目标、对应场景文档链接(相对路径)、运行步骤、文件树
+- **链接约定**:`examples/` 在 `docs_dir` 之外,**不能**写 `[X](../../examples/X/README.md)` 这种 MkDocs 站内链接 —— `--strict` 模式必失败。场景文档指向子示例时统一用:(a) frontmatter `related_example` 记路径(纯字符串,不影响构建),(b) 代码块 `cd examples/X && opencode`,(c) `!!! note` 说明为什么不是超链接
 - **语言**:中文叙述 + 关键术语保留英文(subagent、permission、`.opencode/agent/` 等)
 - **权限字段**:用 `permission`(已替代废弃的 `tools`)
 - **opencode.json 必须含**:`"$schema": "https://opencode.ai/config.json"`
@@ -592,7 +593,17 @@ You are the Tester. ...
 
 ## 完整示例
 
-[examples/01-debug-bug/README.md](../../examples/01-debug-bug/README.md)
+完整可跑配置在仓库根的 `examples/01-debug-bug/`(见其 `README.md`):
+
+```bash
+cd examples/01-debug-bug
+opencode
+```
+
+!!! note "为什么这里不是超链接"
+    `examples/` 在 `docs/` 之外,不参与 MkDocs 构建,写成相对链接会让
+    `mkdocs build --strict` 报 "target not found"。路径同时记在 frontmatter
+    `related_example`,在 GitHub 上按路径点进去即可。
 
 ## 踩坑与备注
 
@@ -788,7 +799,17 @@ related_example: ../../examples/02-add-feature/
 
 ## 完整示例
 
-[examples/02-add-feature/README.md](../../examples/02-add-feature/README.md)
+完整可跑配置在仓库根的 `examples/02-add-feature/`(见其 `README.md`):
+
+```bash
+cd examples/02-add-feature
+opencode
+```
+
+!!! note "为什么这里不是超链接"
+    `examples/` 在 `docs/` 之外,不参与 MkDocs 构建,写成相对链接会让
+    `mkdocs build --strict` 报 "target not found"。路径同时记在 frontmatter
+    `related_example`,在 GitHub 上按路径点进去即可。
 
 ## 踩坑与备注
 
@@ -999,7 +1020,17 @@ related_example: ../../examples/03-refactor/
 
 ## 完整示例
 
-[examples/03-refactor/README.md](../../examples/03-refactor/README.md)
+完整可跑配置在仓库根的 `examples/03-refactor/`(见其 `README.md`):
+
+```bash
+cd examples/03-refactor
+opencode
+```
+
+!!! note "为什么这里不是超链接"
+    `examples/` 在 `docs/` 之外,不参与 MkDocs 构建,写成相对链接会让
+    `mkdocs build --strict` 报 "target not found"。路径同时记在 frontmatter
+    `related_example`,在 GitHub 上按路径点进去即可。
 
 ## 踩坑与备注
 
@@ -1194,7 +1225,17 @@ related_example: ../../examples/04-pr-review/
 
 ## 完整示例
 
-[examples/04-pr-review/README.md](../../examples/04-pr-review/README.md)
+完整可跑配置在仓库根的 `examples/04-pr-review/`(见其 `README.md`):
+
+```bash
+cd examples/04-pr-review
+opencode
+```
+
+!!! note "为什么这里不是超链接"
+    `examples/` 在 `docs/` 之外,不参与 MkDocs 构建,写成相对链接会让
+    `mkdocs build --strict` 报 "target not found"。路径同时记在 frontmatter
+    `related_example`,在 GitHub 上按路径点进去即可。
 
 ## 踩坑与备注
 
@@ -1496,9 +1537,9 @@ mkdocs build --strict
 - 无 WARNING、无 ERROR
 - `site/index.html` 存在
 - 所有 nav 项可点击,无 404
-- 内部链接(`../examples/...`、`scenarios/...`)全部解析
-
-如有链接失败,优先检查 `exclude_docs` 没把 `examples/` 漏掉 / 路径相对性。
+- 内部链接(`scenarios/...`、`concepts/...`、`experiments/...` 之间的)全部解析
+- `examples/**` 在 `docs_dir` 外,**不**用 MkDocs 链接;走 frontmatter `related_example` + 代码块/admonition(由 T3 起的统一模式)
+- `site/` 下确认无 `examples/` 与 `superpowers/` 残留(可在 build 后 `Get-ChildItem site -Recurse` 抽查)
 
 - [ ] **Step 5: 全量 commit**
 
