@@ -834,6 +834,8 @@ git add examples/02-add-feature/ docs/scenarios/02-add-feature.md
 git commit -m "docs(scenarios): add 02-add-feature with feature-builder + /feat command"
 ```
 
+> **Note**: Implementation uses a custom `feature-builder` subagent instead of the spec's `general` agent. Pedagogically clearer (custom subagent illustrates the wiki's lesson); spec deviation, not bug.
+
 ---
 
 ## Task 5: Scenario 03 — 重构
