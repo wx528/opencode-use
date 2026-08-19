@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "reviewer": {
+      "mode": "subagent",
+      "hidden": true,
+      "temperature": 0.2,
+      "permission": {
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "edit": "deny",
+        "bash": "ask",
+        "webfetch": "allow",
+        "task": "deny"
+      }
+    }
+  }
+}
