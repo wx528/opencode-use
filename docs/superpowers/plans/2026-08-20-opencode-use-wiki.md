@@ -16,7 +16,7 @@
 来自 spec,逐条引用,所有任务隐式遵守:
 
 - **结构**:`docs/scenarios/`、`docs/concepts/`、`docs/experiments/` 三类;`examples/` 平行;`docs/superpowers/` 放设计与计划
-- **MkDocs 配置**:`docs_dir: docs`、`site_dir: site`、主题 `material`、`exclude_docs` 排除 `examples/**` 与 `docs/superpowers/**`、`markdown_extensions` 至少含 `admonition`、`tabbed`、`codehilite`、`toc with permalink`、`attr_list`、`plugins: [search]`
+- **MkDocs 配置**:`docs_dir: docs`、`site_dir: site`、主题 `material`、`exclude_docs` 排除 `examples/**` 与 `docs/superpowers/**`、`markdown_extensions` 至少含 `admonition`、`pymdownx.tabbed`、`codehilite`、`toc with permalink`、`attr_list`、`plugins: [search]`
 - **场景文件命名**:`docs/scenarios/NN-name.md` ↔ `examples/NN-name/`,编号严格一致,两位数前缀
 - **场景 frontmatter**:`title`、`scenario_id`、`status` (`draft|working|verified`)、`opencode_version`、`related_example`
 - **示例 README 必须有**:目标、对应场景文档链接(相对路径)、运行步骤、文件树
@@ -132,7 +132,7 @@ theme:
 
 markdown_extensions:
   - admonition
-  - tabbed
+  - pymdownx.tabbed
   - codehilite
   - toc:
       permalink: true
