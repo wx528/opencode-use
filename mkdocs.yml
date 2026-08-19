@@ -39,3 +39,7 @@ exclude_docs: |
 
 nav:
   - 首页: index.md
+  - Concepts:
+      - agents: concepts/agents.md
+      - permissions: concepts/permissions.md
+      - subagent vs primary: concepts/subagent-vs-primary.md
