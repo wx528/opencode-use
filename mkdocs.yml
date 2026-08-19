@@ -43,3 +43,5 @@ nav:
       - agents: concepts/agents.md
       - permissions: concepts/permissions.md
       - subagent vs primary: concepts/subagent-vs-primary.md
+  - Experiments:
+      - permission patterns: experiments/permission-patterns.md
