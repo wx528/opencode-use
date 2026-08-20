@@ -31,7 +31,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          uv run mkdocs gh-deploy \
-            --force \
-            --remote-branch gh-pages \
-            --remote-url "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          # Override origin to github only — the local repo has dual origin
+          # (github + wchaha), but gh-deploy must not push to wchaha.
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          uv run mkdocs gh-deploy --force --remote-branch gh-pages
